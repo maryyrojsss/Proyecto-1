@@ -1,5 +1,21 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const MiApp());
+}
+
+class MiApp extends StatelessWidget {
+  const MiApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(),
+    );
+  }
+}
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -7,9 +23,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hoja de Vida"),
+        title: const Text("Hoja de Vida"),
         backgroundColor: Colors.teal,
-      ), // AppBar
+      ),
       body: const Column(
         children: [
           Padding(
@@ -21,9 +37,8 @@ class HomePage extends StatelessWidget {
                 icon: Icon(Icons.numbers),
                 border: OutlineInputBorder(),
               ),
-            ), // TextField
-          ), // Padding
-
+            ),
+          ),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextField(
@@ -33,10 +48,10 @@ class HomePage extends StatelessWidget {
                 icon: Icon(Icons.abc),
                 border: OutlineInputBorder(),
               ),
-            ), // TextField
-          ), // Padding
+            ),
+          ),
         ],
       ),
-    ); // Column // Scaffold
+    );
   }
 }
